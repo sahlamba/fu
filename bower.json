@@ -1,0 +1,18 @@
+{
+  "name": "fuck-off",
+  "homepage": "https://github.com/thedrumsknight/fuck-off",
+  "authors": [
+    "Sahil Lamba <sahil.lamba95@gmail.com>"
+  ],
+  "description": "Tell anyone to mind their own business.",
+  "main": "app.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
