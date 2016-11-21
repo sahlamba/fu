@@ -105,3 +105,17 @@ i.ml {
   display: inline-block;
   vertical-align: middle;
 }
+
+p.display {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-left: -180px;
+  font-size: 28px;
+  color: #fff;
+}
+
+p.display strong {
+  font-size: inherit;
+  font-weight: bolder;
+}

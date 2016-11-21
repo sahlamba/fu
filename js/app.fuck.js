@@ -20,7 +20,7 @@ angular.module('fuck.fuck')
     function ($scope, DB, $stateParams) {
       $scope.load = function () {
         DB.getUser($stateParams.id).then(function (name) {
-          $scope.displayString = name + ' told you to fuck off.'
+          $scope.displayName = name;
         });
       };
     }
