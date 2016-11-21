@@ -16,8 +16,8 @@ angular.module('fuck.home', [])
   ]);
 
 angular.module('fuck.home')
-  .controller('HomeCtrl', ['$scope',
-    function ($scope) {
-      console.log(1);
+  .controller('HomeCtrl', ['$scope', 'DB',
+    function ($scope, DB) {
+      $scope.userName = '';
     }
   ]);
