@@ -18,6 +18,9 @@ angular.module('fuck.home', [])
 angular.module('fuck.home')
   .controller('HomeCtrl', ['$scope', 'DB', '$state',
     function ($scope, DB, $state) {
+      $scope.$on('$viewContentLoaded', function() {
+         document.getElementById('name').focus();
+      });
       $scope.userName = '';
       $scope.createPage = function () {
         DB.createUser($scope.userName)
