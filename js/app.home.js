@@ -16,8 +16,18 @@ angular.module('fuck.home', [])
   ]);
 
 angular.module('fuck.home')
-  .controller('HomeCtrl', ['$scope', 'DB',
-    function ($scope, DB) {
+  .controller('HomeCtrl', ['$scope', 'DB', '$state',
+    function ($scope, DB, $state) {
       $scope.userName = '';
+      $scope.createPage = function () {
+        DB.createUser($scope.userName)
+        .then(function (data) {
+          if (data.status) {
+            $state.go('fuck', {'id': data.id});
+          } else {
+            console.log('Errrror!');
+          }
+        });
+      };
     }
   ]);

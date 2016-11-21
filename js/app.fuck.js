@@ -8,7 +8,7 @@ angular.module('fuck.fuck', [])
 
       $stateProvider
         .state('fuck', {
-          url: '/{id}',
+          url: '/:id',
           templateUrl: 'views/fuck.html',
           controller: 'FuckOff'
         });
@@ -16,8 +16,12 @@ angular.module('fuck.fuck', [])
   ]);
 
 angular.module('fuck.fuck')
-  .controller('FuckOff', ['$scope',
-    function ($scope) {
-      console.log(2);
+  .controller('FuckOff', ['$scope', 'DB', '$stateParams',
+    function ($scope, DB, $stateParams) {
+      $scope.load = function () {
+        DB.getUser($stateParams.id).then(function (name) {
+          $scope.displayString = name + ' told you to fuck off.'
+        });
+      };
     }
   ]);
