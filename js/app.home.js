@@ -23,14 +23,16 @@ angular.module('fuck.home')
       });
       $scope.userName = '';
       $scope.createPage = function () {
-        DB.createUser($scope.userName)
-        .then(function (data) {
-          if (data.status) {
-            $state.go('fuck', {'id': data.id});
-          } else {
-            console.log('Errrror!');
-          }
-        });
+        if ($scope.userName) {
+          DB.createUser($scope.userName)
+          .then(function (data) {
+            if (data.status) {
+              $state.go('fuck', {'id': data.id});
+            } else {
+              console.log('Errrror!');
+            }
+          });
+        }
       };
     }
   ]);

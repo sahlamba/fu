@@ -16,10 +16,13 @@ angular.module('fuck.fuck', [])
   ]);
 
 angular.module('fuck.fuck')
-  .controller('FuckOff', ['$scope', 'DB', '$stateParams',
-    function ($scope, DB, $stateParams) {
+  .controller('FuckOff', ['$scope', 'DB', '$stateParams', '$state',
+    function ($scope, DB, $stateParams, $state) {
       $scope.load = function () {
         DB.getUser($stateParams.id).then(function (name) {
+          if (!name) {
+            $state.go('home');
+          }
           $scope.displayName = name;
         });
       };
