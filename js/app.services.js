@@ -10,7 +10,7 @@ angular.module('fuck.service')
         createUser: function (userName) {
           var defer = $q.defer();
           var superName = 'random';
-          $http.get("https://faker.hook.io/?property=internet.domainWord")
+          $http.get("//faker.hook.io/?property=internet.domainWord")
             .success(function (data) {
               superName = data.replace(/"/g, ''); // Remove quotes
               superName = superName.toLowerCase().slice(0, -1); // Trim + remove newline char
